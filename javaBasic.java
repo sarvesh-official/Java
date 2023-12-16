@@ -394,32 +394,32 @@
 
 // Print whether a number is prime or not
 
-// import java.util.*;
+import java.util.*;
 
-// public class javaBasic {
+public class javaBasic {
 
-// public static void main(String[] args) {
-// Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-// System.out.println("Enter the number");
-// int input = sc.nextInt();
-// Boolean isPrime = true;
-// if (input == 2) {
-// System.out.println("The number is prime");
-// isPrime = false;
-// } else {
+        System.out.println("Enter the number");
+        int input = sc.nextInt();
+        Boolean isPrime = true;
+        if (input == 2) {
+            System.out.println("The number is prime");
+            isPrime = false;
+        } else {
 
-// for (int i = 2; i <= (Math.sqrt(input)); i++) {
-// if (input % i == 0) {
-// isPrime = false;
-// }
-// }
-// if (isPrime == false) {
-// System.out.println("The number is prime");
-// } else {
-// System.out.println("The number is not prime");
-// }
-// }
+            for (int i = 2; i <= (Math.sqrt(input)); i++) {
+                if (input % i == 0) {
+                    isPrime = false;
+                }
+            }
+            if (isPrime == false) {
+                System.out.println("The number is prime");
+            } else {
+                System.out.println("The number is not prime");
+            }
+        }
 
-// }
-// }
+    }
+}
