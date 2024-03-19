@@ -1,8 +1,22 @@
-package Arrays;
+
+
+
 
 // * O(n) Kadanes Algorithm
 
 public class MaxSubArraySum {
+    // * Optimised Kadanes Algorithm
+    public static void OptimisedKadanes(int[] numbers) {
+        int max = numbers[0];
+        int sum = numbers[0];
+
+        for (int i = 0; i < numbers.length; i++) {
+            sum = Math.max(sum + numbers[i], numbers[i]);
+            max = Math.max(max, sum);
+        }
+
+        System.out.println(max);
+    }
     public static void Kadanes(int[] numbers) {
         int max = Integer.MIN_VALUE;
         int currentSum = 0;
@@ -19,8 +33,8 @@ public class MaxSubArraySum {
     }
 
     public static void main(String[] args) {
-        int[] numbers = { 2, 4, 6, 8, 10 };
-        Kadanes(numbers);
+        int[] numbers = { -2, -4, -6, -8, -10 };
+        OptimisedKadanes(numbers);
     }
 
 }

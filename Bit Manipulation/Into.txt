@@ -1,0 +1,45 @@
+Binary Number System - 0 & 1
+
+Decimal Number System - 0,1,2,3,4,5,6,7,8,9
+
+Decimal to Binary 
+
+example : 4 
+
+4 / 2 --> rem = 0
+2 / 2 --> rem = 0
+1
+
+4 in Decimal Converted into Binary  is 100
+
+000100 -- here 1 is the set bit 
+
+
+Binary to Decimal
+
+example : 100
+
+1 * 2^2 + 0 * 2^1 + 0 * 2^0 --> 4 + 0 + 0 = 4
+
+100 in Binary Converted into Decimal  is 4
+
+0 -> 0
+1 -> 1
+2 -> 10
+3 -> 11
+4 -> 100
+5 -> 101
+6 -> 110
+7 -> 111
+8 -> 1000
+
+Bitwise Operators
+
+Binary AND - &
+Binary OR - |
+Binary XOR - ^
+Binary One's Complement ~
+Binary Left Shift <<
+Binary Right Shift >>
+
+

@@ -1,4 +1,3 @@
-package Arrays;
 
 public class StockMarket {
     public static int buyAndSellStocks(int prices[]) {

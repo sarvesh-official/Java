@@ -1,5 +1,3 @@
-package Arrays;
-
 import java.util.Scanner;
 
 public class MockInterview {
@@ -23,6 +21,10 @@ public class MockInterview {
 
         String answer = generateRoll(input);
         System.out.println(answer);
+        
+        sc.close();
     }
+
+    
     
 }

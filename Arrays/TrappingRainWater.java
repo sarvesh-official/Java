@@ -1,4 +1,4 @@
-package Arrays;
+import java.util.Scanner;
 
 public class TrappingRainWater {
 
@@ -7,6 +7,7 @@ public class TrappingRainWater {
         int n = height.length;
         // * Calculate Left Max Boundary - auxiliary array
         int leftMax[] = new int[height.length];
+
         leftMax[0] = height[0];
         for (int i = 1; i < height.length; i++) {
             leftMax[i] = Math.max(height[i], leftMax[i - 1]);
@@ -20,6 +21,7 @@ public class TrappingRainWater {
         }
         // ^ loop
         int trappedWater = 0;
+        
         for (int i = 0; i < height.length; i++) {
             // ^ waterLevel = min(leftmax bound, rightmax bound)
             int waterLevel = Math.min(leftMax[i], rightMax[i]);
@@ -31,7 +33,7 @@ public class TrappingRainWater {
     }
 
     public static void main(String[] args) {
-        int height[] = { 4, 2, 0, 6, 3, 2, 5 };
+        int height[] = {1,8,6,2,5,4,8,3,7 };
         System.out.println("Trapped rainwater: " + TrappedRainWater(height));
     }
 

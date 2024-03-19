@@ -1,6 +1,4 @@
-package Arrays;
 
-import javax.print.event.PrintEvent;
 
 public class Pairs {
 

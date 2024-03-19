@@ -1,4 +1,3 @@
-package Arrays;
 
 import java.util.Scanner;
 
@@ -28,5 +27,6 @@ public class LinearSearch {
             System.out.println("Element is not present");
 
         }
+        sc.close();
     }
 }

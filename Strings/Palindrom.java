@@ -24,5 +24,6 @@ public class Palindrom {
         if(isPalindrome){
             System.err.println( "The string is a palindrome" );
         }
+
     }
 }

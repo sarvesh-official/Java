@@ -15,5 +15,6 @@ public class FunwithPara {
         int b = sc.nextInt();
         int sum = calculateSum(a, b);
         System.out.println("The total is : " + sum);
+        sc.close();
     }
 }
