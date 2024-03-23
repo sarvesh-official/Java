@@ -1,11 +1,10 @@
 package DojoProblems;
 
 import java.util.*;
-
 public class NextGreaterElement {
     public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
         Map<Integer, Integer> nextGreaterMap = new HashMap<>();
-        Deque<Integer> stack = new ArrayDeque<>();
+        Stack<Integer> stack = new Stack<>();
 
         for (int i = nums2.length - 1; i >= 0; i--) {
             while (!stack.isEmpty() && nums2[i] > stack.peek()) {
