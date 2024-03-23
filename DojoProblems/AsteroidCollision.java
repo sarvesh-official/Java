@@ -23,12 +23,15 @@ public class AsteroidCollision {
 
                     if (top < 0) {
                         stack.push(asteroids[i]);
+                        break;
                     }
+
                     int modVal = Math.abs(asteroids[i]);
 
                     if (modVal == top) {
                         stack.pop();
                         break;
+
                     } else if (modVal < top) {
                         break;
                     } else {
@@ -49,6 +52,9 @@ public class AsteroidCollision {
         return ansArray;
     }
     public static void main(String[] args) {
+        int[] arr = { -2, -1, 1, 2 };
+
+        System.out.println(asteroidCollision(arr));
         
     }
 }
