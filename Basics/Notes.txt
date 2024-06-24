@@ -1,0 +1,80 @@
+Data Types
+
+(Primitive Data Types)
+
+char --  2 Byte
+
+byte --  (-128 to 128)
+
+int  --  4 Bytes (-10^9 to 10^9)
+
+long --  8 Bytes (-10^18 to 10^18)
+
+boolean -- true / false
+
+float --> same as int in decimal form
+
+double --> same as long in decimal form
+
+
+int a = 20;
+int b = a;
+
+sout(a , b); --> 20 20
+
+a = 40;
+
+sout(a , b); --> 40 20
+
+reason : Deep Copy
+
+
+(Reference Data Type)
+
+Char
+Integer
+Float
+Long
+Double 
+Boolean 
+
+Array 
+
+Class is a blueprint
+
+Point p1 = new Point(2,3);
+
+Point p2 = p1;
+
+sout(p1 , p2); --> 2,3 2,3
+
+p1.x = 3;
+p1.y = 4;
+
+sout(p1 , p2) --> 3,4 3,4
+
+Reason : Shallow Copy
+
+
+Shallow Copy --> Deep Copy
+
+Point p1 = new Point(2,3);
+
+Point p2 = new Point(p1.x,p2.y);
+
+scout(p1 , p2)  --> 2,3 2,3
+
+p1.x = 3;
+p1.y = 4;
+
+scout(p1 ,p2) --> 3,4 2,3
+
+
+
+Day 1 - (PPP)
+
+Arrays -- It is a data structure which is a collection of elements each having indices which are used to access them manipulate them. Arrays are used to store multiple values in a single variable.
+
+Dynamic Arrays --> They don't have any fixed size their size expands based on the elements being added and removed in runtime
+
+In java if an array has a fixed size you can't add elements more than the size of the array , if so ArrayIndexOutOfBoundsException occurs

@@ -7,6 +7,9 @@
 public class MaxSubArraySum {
     // * Optimised Kadanes Algorithm
     public static void OptimisedKadanes(int[] numbers) {
+
+        //* */ Reason for assigning the first value is to pass the edge cases like [-1]
+
         int max = numbers[0];
         int sum = numbers[0];
 

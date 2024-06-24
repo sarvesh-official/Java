@@ -6,7 +6,7 @@ public class InsertionSort {
         int n = arr.length;
 
         for (int i = 1; i < n; i++) {
-            int curr = arr[i];
+            int curr = arr[i]; // considered to be sorted
             int prev = i - 1;
             while (prev >= 0 && arr[prev] > curr) {
                 arr[prev + 1] = arr[prev];
