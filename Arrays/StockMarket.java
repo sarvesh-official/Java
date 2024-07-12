@@ -4,7 +4,7 @@ public class StockMarket {
 
         int buyPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
-
+        System.out.println(buyPrice);
         for (int i = 0; i < prices.length; i++) {
             if (buyPrice < prices[i]) {
 

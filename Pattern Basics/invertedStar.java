@@ -13,6 +13,7 @@ public class invertedStar {
                 System.out.print("*");
 
             }
+          
             System.out.println("");
         }
     }

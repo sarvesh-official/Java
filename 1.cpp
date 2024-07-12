@@ -1,62 +1,25 @@
-class Node {
-public:
-    int key, val;
-    Node* prev;
-    Node* next;
-    Node(int k, int v) : key(k), val(v), prev(nullptr), next(nullptr) {}
-};
-
-class LRUCache {
-public:
-    LRUCache(int capacity) {
-        cap = capacity;
-        head = new Node(0, 0);
-        tail = new Node(0, 0);
-        head->next = tail;
-        tail->prev = head;
-    }
-int get(int key) {
-        if (cache.find(key) != cache.end()) {
-            removeNode(cache[key]);
-            insertNode(cache[key]);
-            return cache[key]->val;
-        } else {
-            return -1;
-        }
-    }
-void put(int key, int value) {
-        if (cache.find(key) != cache.end()) {
-            removeNode(cache[key]);
-        }
-        Node* node = new Node(key, value);
-        cache[key] = node;
-        insertNode(node);
-
-        if (cache.size() > cap) {
-            Node* lru = tail->prev;
-            removeNode(lru);
-            cache.erase(lru->key);
-            delete lru;
-        }
-    }
-private:
-    int cap;
-    std::unordered_map<int, Node*> cache;
-    Node* head;
-    Node* tail;
-
-    void removeNode(Node* node) {
-        Node* prev = node->prev;
-        Node* next = node->next;
-        prev->next = next;
-        next->prev = prev;
-    }
-
-    void insertNode(Node* node) {
-        Node* end = head->next;
-        head->next = node;
-        node->prev = head;
-        node->next = end;
-        end->prev = node;
-    }
-};
+#include<stdio.h>
+int main()
+{
+int a[50], size, i, j = 0, big, sec_big;
+scanf("%d", &size);
+for(i=0; i<size; i++)
+scanf("%d", &a[i]);
+big=a[0];
+for(i=1;i<size;i++)
+{
+if(big<a[i])
+{
+big=a[i];
+j = i;
+}
+}
+sec_big =a[size-j-1];
+for(i=1;i<size;i++)
+{
+if(sec_big <a[i] && j != i)
+sec_big =a[i];
+}
+printf("%d", sec_big);
+return 0;
+}

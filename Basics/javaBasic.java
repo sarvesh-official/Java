@@ -118,7 +118,7 @@ package Basics;
 // System.out.println("Enter the Value of B: ");
 // int b = sc.nextInt();
 
-// int product = a + b;
+// int product = a * b;
 
 // System.out.println("The Output = " + product);
 
@@ -404,18 +404,19 @@ public class javaBasic {
 
         System.out.println("Enter the number");
         int input = sc.nextInt();
-        Boolean isPrime = true;
+        Boolean isPrime = false;
         if (input == 2) {
             System.out.println("The number is prime");
-            isPrime = false;
+            isPrime = true;
         } else {
 
             for (int i = 2; i <= (Math.sqrt(input)); i++) {
                 if (input % i == 0) {
-                    isPrime = false;
+                    isPrime = true;
+                    break;
                 }
             }
-            if (isPrime == false) {
+            if (isPrime) {
                 System.out.println("The number is prime");
             } else {
                 System.out.println("The number is not prime");

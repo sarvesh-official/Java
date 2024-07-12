@@ -113,7 +113,53 @@ public class TentoOne {
     }
     
 
+    public static int optimisedPower(int a, int n) {
 
+        if (n == 0) {
+            return 1;
+        }
+
+        int halfPower = optimisedPower(a, n / 2);
+        int halfPowerSq = halfPower * halfPower;
+
+        if (n % 2 != 0) {
+            halfPowerSq = a * halfPowerSq;
+        }
+
+        return halfPowerSq;
+    }
+    
+    public static int tilingProblem(int n) {
+
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        // Vertical Choice
+        int fnm1 = tilingProblem(n - 1);
+
+        // Horizontal Choice
+        int fnm2 = tilingProblem(n - 2);
+
+        int totalWays = fnm1 + fnm2;
+
+        return totalWays;
+    }
+    
+    public static void removeDuplicates(String str, int idx, StringBuilder newStr, boolean[] map) {
+        
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+
+        char currChar = str.charAt(idx);
+        if (map[currChar - 'a'] == true) {
+            removeDuplicates(str, idx + 1, newStr, map);
+        } else {
+            removeDuplicates(str, idx + 1 , newStr.append(currChar), map);
+        }
+    }
     public static void main(String[] args) {
         int n = 10;
         printDec(n);
@@ -123,5 +169,10 @@ public class TentoOne {
         System.err.println((sortedArray(arr,0)));
         System.err.println((firstOccurrence(arr,3,0)));
         System.err.println((lastOccurrence(arr,3,0)));
+        System.err.println((optimisedPower(2,10)));
+        System.err.println((tilingProblem(2)));
+        removeDuplicates("appnacollege", 0, new StringBuilder(""), new boolean[26]);
     }
 }
+
+

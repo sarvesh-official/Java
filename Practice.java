@@ -1,56 +1,82 @@
-
+/**
+ * Practice
+ */
 public class Practice {
-  public static void main(String[] args) {
-    Node n1 = new Node(2, null);
-    System.out.println(n1.data);
-    LinkedList l1 = new LinkedList();
-    l1.head = n1;
 
-    l1.printLL();
-  }
-}
-
-class Node {
-    int data;
-    Node next;
-
-    Node(int d, Node n) {
-        this.data = d;
-        this.next = n;
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
-}
 
-class LinkedList {
-    Node head;
+    public static int getOccurence(int[] arr, int n, int oc) {
 
-    LinkedList() {
-        this.head = null;
-    }
-    
-    void addNode(int data) {
-        Node node = new Node(data, null);
-        if (this.head == null) {
-            this.head = node;
-        } else {
-            Node itr = this.head;
+        int len = arr.length;
+        int count = 0;
 
-            while (itr != null & itr.next != null) {
-                itr = itr.next;
+        for (int i = 0; i < len; i++) {
+
+            if (arr[i] == n) {
+                count++;
             }
 
-            itr.next = node;
+            if (count == oc) {
+                return i;
+
+            }
+
         }
+
+        return -1;
+
     }
     
-    void printLL() {
-        Node itr = this.head;
-        if (itr != null) {
-            
-            while (itr != null) {
-                System.out.println(itr.data);
-                itr = itr.next;
+    public static void isFound(int[] arr, int n) {
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] == n) {
+                System.out.println("Found");
+                return;
             }
-            System.out.println();
         }
+
+        System.out.println("Missing");
+        return;
     }
+    
+    public static void secondLargest(int[] arr) {
+        
+        int count = 0;
+        int largest = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+
+            for (int j = i ; j < arr.length - i - 1; j++) {
+
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        
+        System.out.println(arr[arr.length - 2]);
+    }
+
+    public static void main(String[] args) {
+        
+        int[] arr = { 1, 3, 6, 7, 6, 3, 10 };
+        int[] arr2 = { 1, 2, 3 };
+        int[] arr3 = { 23, 45, 7, 34, 25, 25, 89 };
+        System.out.println(getOccurence(arr, 3, 2));
+        isFound(arr2, 2);
+        secondLargest(arr3);
+    }
+
+  
 }
